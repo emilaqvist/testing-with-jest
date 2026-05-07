@@ -1,6 +1,6 @@
-#testing-with-jest
+# testing-with-jest
 
 A Jest + npm lab session 
 
-##See more: 
+## See more: 
 Gammal länk
