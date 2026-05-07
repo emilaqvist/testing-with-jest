@@ -3,4 +3,4 @@
 A Jest + npm lab session 
 
 ## See more: 
-Gammal länk
+Gammal länk tyvärr, men kolla lite ny text!
