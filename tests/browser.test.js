@@ -43,6 +43,7 @@ describe('Clicking "Ok" without input in pusha till stacken prompt box', ()=>{
         let alert = await driver.switchTo().alert();
         await alert.sendKeys(""); //Samma som testet ovan fast man skickar en tom sträng
         await alert.accept(); 
+        await driver.wait(until.alertIsPresent(),1000); //Den väntar tills nya alerten kommer innan den byter så att den inte testar innan den hunnit skapas. 
         let failAlert = await driver.switchTo().alert(); //Ska öppna en ny alert
         let text = await failAlert.getText(); //Här ska de förhoppningsvis stå felmeddelande 
         expect(text).toEqual("Du kan inte pusha en tom sträng till stacken"); //Kollar så felmeddelande står

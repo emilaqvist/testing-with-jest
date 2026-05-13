@@ -17,3 +17,10 @@ exports.pop = function () {
 exports.peek = function(){
     return _.last(stack);   
 }
+
+//Poppar alla element på stacken aka tömmer hela
+exports.clear = function(){ 
+    while(stack.length >0){ 
+        stack.pop();
+    }
+}
