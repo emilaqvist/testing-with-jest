@@ -34,3 +34,18 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+//Vill att den ska ge ett felmeddelande när man trycker ok utan att skriva någonting
+describe('Clicking "Ok" without input in pusha till stacken prompt box', ()=>{ 
+    it('should open an alert', async ()=>{
+        let push = await driver.findElement(By.id('push')); 
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys(""); //Samma som testet ovan fast man skickar en tom sträng
+        await alert.accept(); 
+        let failAlert = await driver.switchTo().alert(); //Ska öppna en ny alert
+        let text = await failAlert.getText(); //Här ska de förhoppningsvis stå felmeddelande 
+        expect(text).toEqual("Du kan inte pusha en tom sträng till stacken"); //Kollar så felmeddelande står
+        await failAlert.accept(); //Sen klickar den ok 
+    });
+});
